@@ -1,0 +1,46 @@
+''' Read input from STDIN. Print your output to STDOUT '''
+    #Use input() to read input from STDIN and use print to write your output to STDOUT
+
+def main():
+    NoofTestCases = int(input())
+    while NoofTestCases > 0:
+        NoofHouses = int(input())
+        TicketNum = input()
+        TicketNum_int = list(map(int, TicketNum.split()))
+        H1 = []
+        H2 = []
+        for i in range(0,NoofHouses,2):
+            if TicketNum_int[i] > 0:
+                H1.append(TicketNum_int[i])
+        H1 = sorted(H1)
+        #print(H1)
+        for i in range(1,NoofHouses,2):
+            if TicketNum_int[i] > 0:
+                H2.append(TicketNum_int[i])
+        H2 = sorted(H2)
+        #print(H2) 
+        
+        if sum(H1) > sum(H2):
+            for i in H1:
+                print(i, end='')
+            print()
+        elif sum(H1) == sum(H2):
+            if H1[0] > H2[0]:
+                for i in H1:
+                    print(i, end='')
+                print()
+            else:
+                for i in H2:
+                    print(i, end='')
+                print()
+        else:
+            for i in H2:
+                print(i, end='')
+            print()
+        
+        #print("\n")
+
+        NoofTestCases = NoofTestCases - 1
+
+
+main()
