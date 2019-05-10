@@ -1,0 +1,28 @@
+''' Read input from STDIN. Print your output to STDOUT '''
+    #Use input() to read input from STDIN and use print to write your output to STDOUT
+
+def main():
+    NoofTestCases = int(input())
+    while NoofTestCases > 0:
+        NoofPlayers = int(input())
+        StrengthofVillians = input()
+        StrengthofPlayers = input()
+        V1 = sorted(map(int ,StrengthofVillians.split()))
+        #print(V1)
+        P1 = sorted(map(int ,StrengthofPlayers.split()))
+        #print(P1)
+        i = 0
+        s1 = 'WIN'
+        for i in range(NoofPlayers):
+            if V1[i] > P1[i]:
+                s1 = 'LOSE'
+                i = NoofPlayers
+        if s1 != 'LOSE':
+            s1 = 'WIN'
+        print(s1)
+
+        NoofTestCases = NoofTestCases - 1
+
+
+main()
+
